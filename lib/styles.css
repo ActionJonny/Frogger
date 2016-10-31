@@ -1,9 +1,9 @@
 body {
-  background-color: darkgreen;
+  background-color: #2C6700;
 }
 
 .game-canvas {
-  background-color: #92CD00;
+  background-color: #FFCF79;
   margin: 150px auto;
   display: block;
 }
