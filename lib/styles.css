@@ -1,0 +1,10 @@
+body {
+  background-color: darkgreen;
+}
+
+.game-canvas {
+  border: 6px dashed #44EEDD;
+  background-color: #FFFFFF;
+  margin: 150px auto;
+  display: block;
+}
