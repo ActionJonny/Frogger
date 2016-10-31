@@ -3,8 +3,7 @@ body {
 }
 
 .game-canvas {
-  border: 6px dashed #44EEDD;
-  background-color: #FFFFFF;
+  background-color: #92CD00;
   margin: 150px auto;
   display: block;
 }
