@@ -6,4 +6,5 @@ body {
   background-color: #FFCF79;
   margin: 150px auto;
   display: block;
+  outline: none;
 }
