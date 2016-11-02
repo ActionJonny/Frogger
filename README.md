@@ -22,18 +22,18 @@ To run tests in Node:
 npm test
 ```
 ## Frogger Items To Do
-* Create a canvas.
-* Autofocus canvas.
-* Frog object with functions for moving LRUD.
-* EventListeners for frog.
-* Animation so canvas is always redrawing.
-* Obstacles to avoid.
-* Obstacles moving across canvas in alternating lanes.
+* ~~Create a canvas.~~
+* Autofocus canvas or a StartGame screen on click.
+* ~~Frog object with functions for moving LRUD.~~
+* ~~EventListeners for frog.~~
+* ~~Animation so canvas is always redrawing.~~
+* ~~Obstacles to avoid.~~
+* ~~Obstacles moving across canvas in alternating lanes.~~
 * Refactor obstacle and frog sizing.
 * Obstacles of same direction pushed in to arrays to DRY and make collision detection function readable.
-* Frog collision function for elements in obstacle arrays.
-* Ability to pause and resume animations.
+* Frog collision function for elements in obstacle arrays. (WIP)
+* Ability to pause and resume animations or add text/btn to screen when level is complete.
 * Insert font if level is complete.
-* Frog reposition if level is complete.
+* ~~Frog reposition if level is complete.~~
 * Frog reposition on collision.
 * Test Test Test Test Test Werk Werk Werk Werk Werk
