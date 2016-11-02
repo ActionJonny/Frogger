@@ -4,7 +4,7 @@ body {
 
 .game-canvas {
   background-color: #000000;
-  margin: 150px auto;
+  margin: 85px auto;
   display: block;
   outline: none;
 }
