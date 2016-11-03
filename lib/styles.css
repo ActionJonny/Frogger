@@ -23,7 +23,27 @@ p {
 
 .game-canvas {
   background-color: #1A1A1A;
-  display: block;
-  margin: 25px auto 5px auto;
+  /*display: block;*/
+  /*margin: 25px auto 5px auto;*/
   outline: none;
+}
+
+#canvas-wrap {
+  margin: auto;
+  position: relative;
+  height: 500px;
+  width: 600px;
+}
+
+#start-game {
+  margin: auto;
+  right: 0;
+  left: 0;
+  position: absolute;
+  border: 3px solid magenta;
+  height: 500px;
+  width: 600px;
+  background-color: blue;
+  text-align: center;
+  z-index: 5;
 }
