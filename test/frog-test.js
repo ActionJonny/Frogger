@@ -54,14 +54,32 @@ describe('Frog', function() {
     assert.isFunction(jon.moveUp);
   });
 
+  it('should decrease the y value by 44 if moveUp is called', function(){
+    var jon = new Frog(0, 100);
+    jon.moveUp(canvas);
+    assert.equal(jon.y, 56);
+  });
+
   it('should have a moveRight function', function(){
     var jon = new Frog();
     assert.isFunction(jon.moveRight);
   });
 
+  it('should increase the x value by 80 if moveRight is called', function(){
+    var jon = new Frog();
+    jon.moveRight(canvas);
+    assert.equal(jon.x, 390);
+  });
+
   it('should have a moveLeft function', function(){
     var jon = new Frog();
     assert.isFunction(jon.moveLeft);
+  });
+
+  it('should decrease the x value by 80 if moveLeft is called', function(){
+    var jon = new Frog();
+    jon.moveLeft(canvas);
+    assert.equal(jon.x, 230);
   });
 
   it('should have a winner function', function(){
@@ -72,6 +90,21 @@ describe('Frog', function() {
   it('should have a drowns function', function(){
     var jon = new Frog();
     assert.isFunction(jon.drowns);
+  });
+
+  it('should return the frog to the start if it drowns', function(){
+    var jon = new Frog(120, 30);
+    var adam = new Frog(270, 30);
+    var wilbur = new Frog(420, 30);
+    jon.drowns();
+    adam.drowns();
+    wilbur.drowns();
+    assert.equal(jon.x, 310);
+    assert.equal(jon.y, 470);
+    assert.equal(adam.x, 310);
+    assert.equal(adam.y, 470);
+    assert.equal(wilbur.x, 310);
+    assert.equal(wilbur.y, 470);
   });
 
   it('should have a detectCollision function', function(){
