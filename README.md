@@ -30,10 +30,10 @@ npm test
 * ~~Obstacles to avoid.~~
 * ~~Obstacles moving across canvas in alternating lanes.~~
 * ~~Refactor obstacle and frog sizing.~~
-* Obstacles of same direction pushed in to arrays to DRY and make collision detection function readable.
+* ~~Obstacles of same direction pushed in to arrays to DRY and make collision detection function readable.~~
 * Frog collision function for elements in obstacle arrays. (WIP)
 * Ability to pause and resume animations or add text/btn to screen when level is complete.
 * Insert font if level is complete.
 * ~~Frog reposition if level is complete.~~
 * Frog reposition on collision.
-* Test Test Test Test Test Werk Werk Werk Werk Werk
+* ~~Test Test Test Test Test Werk Werk Werk Werk Werk~~
