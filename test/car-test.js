@@ -31,4 +31,26 @@ describe('Car', function() {
     var jon = new Car();
     assert.isFunction(jon.draw);
   });
+
+  it('should have a moveLeft function', function(){
+    var jon = new Car();
+    assert.isFunction(jon.moveLeft);
+  });
+
+  it('should decrement the x value by 3 if moveLeft is called', function() {
+    var car = new Car();
+    car.moveLeft();
+    assert.equal(car.x, 537);
+  });
+
+  it('should place the car at an x value of 600 if moveLeft is called while car.x is less than or equal to -80', function() {
+    var car = new Car(-80);
+    car.moveLeft();
+    assert.equal(car.x, 600);
+  });
+
+  it('should have a moveRight function', function(){
+    var jon = new Car();
+    assert.isFunction(jon.moveRight);
+  });
 });
