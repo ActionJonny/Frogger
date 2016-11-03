@@ -32,7 +32,7 @@ describe('Frog', function() {
     var jon = new Frog();
     assert.equal(jon.eAngle, 2*Math.PI);
   });
-  ///////////
+
   it('should have a draw function', function(){
     var jon = new Frog();
     assert.isFunction(jon.draw);
@@ -57,4 +57,20 @@ describe('Frog', function() {
     var jon = new Frog();
     assert.isFunction(jon.moveLeft);
   });
+  //////
+  it('should have a winner function', function(){
+    var jon = new Frog();
+    assert.isFunction(jon.winner);
+  });
+
+  it('should have a drowns function', function(){
+    var jon = new Frog();
+    assert.isFunction(jon.drowns);
+  });
+
+  it('should have a detectCollision function', function(){
+    var jon = new Frog();
+    assert.isFunction(jon.detectCollision);
+  });
+
 });
