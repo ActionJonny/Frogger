@@ -53,4 +53,16 @@ describe('Car', function() {
     var jon = new Car();
     assert.isFunction(jon.moveRight);
   });
+
+  it('should increment the x value by 3 if moveRight is called', function() {
+    var car = new Car();
+    car.moveRight();
+    assert.equal(car.x, 543);
+  });
+
+  it('should place the car at an x value of 600 if moveRight is called while car.x is less than or equal to -80', function() {
+    var car = new Car(600);
+    car.moveRight();
+    assert.equal(car.x, -75);
+  });
 });
