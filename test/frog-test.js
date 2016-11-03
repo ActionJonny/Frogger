@@ -1,6 +1,7 @@
 const assert = require('chai').assert;
 const Frog = require('../lib/frog');
-// const $ = require('jquery');
+
+var canvas = new Canvas();
 
 describe('Frog', function() {
   it('should be an object', function() {
@@ -43,6 +44,12 @@ describe('Frog', function() {
     assert.isFunction(jon.moveDown);
   });
 
+  it('should increase the y value by 44 if moveDown is called', function(){
+    var jon = new Frog(0, 100);
+    jon.moveDown(canvas);
+    assert.equal(jon.y, 144);
+  });
+
   it('should have a moveUp function', function(){
     var jon = new Frog();
     assert.isFunction(jon.moveUp);
@@ -57,7 +64,7 @@ describe('Frog', function() {
     var jon = new Frog();
     assert.isFunction(jon.moveLeft);
   });
-  //////
+
   it('should have a winner function', function(){
     var jon = new Frog();
     assert.isFunction(jon.winner);
@@ -72,5 +79,9 @@ describe('Frog', function() {
     var jon = new Frog();
     assert.isFunction(jon.detectCollision);
   });
-
 });
+////////////
+function Canvas(height, width) {
+  this.height = 500;
+  this.width = 600;
+}
