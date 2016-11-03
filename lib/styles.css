@@ -23,27 +23,39 @@ p {
 
 .game-canvas {
   background-color: #1A1A1A;
-  /*display: block;*/
-  /*margin: 25px auto 5px auto;*/
   outline: none;
 }
 
 #canvas-wrap {
-  margin: auto;
+  margin: 25px auto 0px auto;
   position: relative;
   height: 500px;
   width: 600px;
 }
 
 #start-game {
-  margin: auto;
+  position: absolute;
+  margin: 25px auto 0px auto;
   right: 0;
   left: 0;
-  position: absolute;
-  border: 3px solid magenta;
   height: 500px;
   width: 600px;
-  background-color: blue;
   text-align: center;
   z-index: 5;
+  background-color: #EECD86;
+  color: #7A3E48;
+}
+
+h2 {
+  margin: 200px 0 25px 0;
+  font-size: 2rem;
+  animation: blinker 1.8s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.4; }
+}
+
+h3 {
+  margin-bottom: 14px;
 }
