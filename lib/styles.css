@@ -1,10 +1,29 @@
 body {
   background-color: #2C6700;
+  font-family: 'Press Start 2P', cursive;
+}
+
+header {
+  text-align: center;
+  width: 600px;
+  margin: auto;
+}
+
+h1 {
+  color: #CC6600;
+  font-size: 2rem;
+  margin: 20px auto;
+}
+
+p {
+  color: #CC9900;
+  line-height: 20px;
+  margin-top: 15px;
 }
 
 .game-canvas {
-  background-color: #000000;
-  margin: 85px auto;
+  background-color: #1A1A1A;
   display: block;
+  margin: 25px auto 5px auto;
   outline: none;
 }
