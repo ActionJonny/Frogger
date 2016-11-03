@@ -1,6 +1,5 @@
-const assert = require('chai').assert;
-const Frog = require('../lib/frog');
-
+var assert = require('chai').assert;
+var Frog = require('../lib/frog');
 var canvas = new Canvas();
 
 describe('Frog', function() {
