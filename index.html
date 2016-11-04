@@ -10,15 +10,34 @@
 <body>
   <header>
    <h1>Frogging</h1>
-   <p>Click on the game screen<br>to control Frogger.</p>
    <p>Use the arrow keys to safely navigate Frogger to one of the four lily pads on the opposite side of the highway.</p>
-   <p>Good luck!</p>
   </header>
-  <canvas id="world"
-    class="game-canvas"
-    height="500"
-    width="600">
-  </canvas>
+  <section id="start-game">
+    <h2>Start Game</h2>
+    <h3>Click here to<br>start a new game.</h3>
+    <h3>Good luck!</h3>
+  </section>
+  <section id="you-died" style="display: none;">
+    <h2>Game Over</h2>
+    <h3>Click here to<br>try again.</h3>
+  </section>
+  <section id="level-complete" style="display: none;">
+    <h2>Level Complete</h2>
+    <h3>Click here to<br>start the next level.</h3>
+    <h3>Good luck!</h3>
+  </section>
+  <section id="game-complete" style="display: none;">
+    <div class='a'><img src="http://www.rw-designer.com/icon-view/288.png"/></div>
+    <h2>You Won!</h2>
+    <h3>Keep doing<br>you.</h3>
+  </section>
+  <section id="canvas-wrap">
+    <canvas id="world"
+      class="game-canvas"
+      height="500"
+      width="600">
+    </canvas>
+  </section>
   <script src="main.bundle.js"></script>
 </body>
 </html>
