@@ -17,14 +17,19 @@ describe('Bike', function() {
     assert.equal(jon.y, 323);
   });
 
-  it('should have a height of 50 by default', function() {
+  it('should have a height of 30 by default', function() {
     var terminator = new Bike();
-    assert.equal(terminator.height, 50);
+    assert.equal(terminator.height, 30);
   });
 
-  it('should have a width of 30 by default', function() {
+  it('should have a width of 50 by default', function() {
     var jon = new Bike();
-    assert.equal(jon.width, 30);
+    assert.equal(jon.width, 50);
+  });
+
+  it('should have a speed of 4 by default', function() {
+    var jon = new Bike();
+    assert.equal(jon.speed, 4);
   });
 
   it('should have a draw function', function(){
