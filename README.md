@@ -1,4 +1,8 @@
-# Game Time Starter Kit
+# Frogging
+
+Frogger (フロッガー) is a 1981 arcade game developed by Konami and licensed for North American distribution by Sega-Gremlin and worldwide by Sega itself. It is regarded as a classic from the golden age of video arcade games, noted for its novel gameplay and theme. The object of the game is to direct frogs to their homes one by one by crossing a busy road and navigating a river full of hazards.
+
+## Game Time Starter Kit
 
 To install the dependencies:
 ```
@@ -21,19 +25,3 @@ To run tests in Node:
 ```js
 npm test
 ```
-## Frogger Items To Do
-* ~~Create a canvas.~~
-* Autofocus canvas or a StartGame screen on click.
-* ~~Frog object with functions for moving LRUD.~~
-* ~~EventListeners for frog.~~
-* ~~Animation so canvas is always redrawing.~~
-* ~~Obstacles to avoid.~~
-* ~~Obstacles moving across canvas in alternating lanes.~~
-* ~~Refactor obstacle and frog sizing.~~
-* ~~Obstacles of same direction pushed in to arrays to DRY and make collision detection function readable.~~
-* Frog collision function for elements in obstacle arrays. (WIP)
-* Ability to pause and resume animations or add text/btn to screen when level is complete.
-* Insert font if level is complete.
-* ~~Frog reposition if level is complete.~~
-* Frog reposition on collision.
-* ~~Test Test Test Test Test Werk Werk Werk Werk Werk~~
