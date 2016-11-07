@@ -14,18 +14,23 @@ describe('Car', function() {
 
   it('should have a y coordinate of 365 by default', function() {
     var jon = new Car();
-    assert.equal(jon.y, 365);
+    assert.equal(jon.y, 367);
   });
 
-  it('should have a height of 75 by default', function() {
+  it('should have a height of 30 by default', function() {
     var terminator = new Car();
-    assert.equal(terminator.height, 75);
+    assert.equal(terminator.height, 30);
   });
 
-  it('should have a width of 30 by default', function() {
+  it('should have a width of 75 by default', function() {
     var jon = new Car();
-    assert.equal(jon.width, 30);
+    assert.equal(jon.width, 75);
   });
+
+  it('should have a speed of 3 by default', function() {
+    var jon = new Car();
+    assert.equal(jon.speed, 3);
+  })
 
   it('should have a draw function', function(){
     var jon = new Car();
