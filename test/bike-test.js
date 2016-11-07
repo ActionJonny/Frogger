@@ -58,7 +58,7 @@ describe('Bike', function() {
   it('should place the bike at an x value of 650 if moveLeft is called while bike.x is less than or equal to -50', function() {
     var bike = new Bike(-50);
     bike.moveLeft();
-    assert.equal(bike.x, 650);
+    assert.equal(bike.x, 600);
   });
 
   it('should have a moveLeftFast function', function(){
@@ -75,7 +75,7 @@ describe('Bike', function() {
   it('should place the bike at an x value of 650 if moveLeftFast is called while bike.x is less than or equal to -50', function() {
     var bike = new Bike(-50);
     bike.moveLeftFast();
-    assert.equal(bike.x, 650);
+    assert.equal(bike.x, 600);
   });
 
   it('should have a moveRight function', function(){

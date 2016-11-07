@@ -51,7 +51,7 @@ describe('Bus', function() {
   it('should place the bus at an x value of 620 if moveLeft is called while bus.x is less than or equal to -120', function() {
     var bus = new Bus(-120);
     bus.moveLeft();
-    assert.equal(bus.x, 620);
+    assert.equal(bus.x, 600);
   });
 
   it('should have a moveRight function', function(){

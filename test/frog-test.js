@@ -68,7 +68,7 @@ describe('Frog', function() {
   it('should increase the x value by 80 if moveRight is called', function(){
     var jon = new Frog();
     jon.moveRight(canvas);
-    assert.equal(jon.x, 390);
+    assert.equal(jon.x, 310);
   });
 
   it('should have a moveLeft function', function(){
@@ -79,7 +79,7 @@ describe('Frog', function() {
   it('should decrease the x value by 80 if moveLeft is called', function(){
     var jon = new Frog();
     jon.moveLeft(canvas);
-    assert.equal(jon.x, 230);
+    assert.equal(jon.x, 310);
   });
 
   it('should have a winner function', function(){
