@@ -32,6 +32,11 @@ h3 {
   margin-bottom: 14px;
 }
 
+h6 {
+  color: #CC9900;
+  margin-bottom: 15px;
+}
+
 div {
   animation-direction: alternate;
   animation-duration: 5s;
@@ -100,13 +105,34 @@ div {
   color: #003366;
 }
 
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#lives-section {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 48px;
+  width: 48px;
+  border-radius: 10px;
+  margin: 0 12px;
+}
+
+.hide {
+  display: none;
+}
+
 .bouncing-frog {
   height: 300px;
   width: 300px;
 }
 
 @keyframes blinker {
-  50% { opacity: 0.4; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes testAnimation {
