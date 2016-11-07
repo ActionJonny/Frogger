@@ -21,7 +21,7 @@ p {
   margin-top: 15px;
 }
 
-.game-canvas {
+#world {
   background-color: #1A1A1A;
   outline: none;
 }

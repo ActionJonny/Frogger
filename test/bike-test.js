@@ -17,6 +17,7 @@ describe('Bike', function() {
     assert.equal(jon.y, 323);
   });
 
+
   it('should have a height of 30 by default', function() {
     var terminator = new Bike();
     assert.equal(terminator.height, 30);
@@ -30,7 +31,13 @@ describe('Bike', function() {
   it('should have a speed of 4 by default', function() {
     var jon = new Bike();
     assert.equal(jon.speed, 4);
+
   });
+
+  it('should have a speed of 4 by default', function() {
+    var jon = new Bike();
+    assert.equal(jon.speed, 4);
+  })
 
   it('should have a draw function', function(){
     var jon = new Bike();
