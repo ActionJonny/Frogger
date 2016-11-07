@@ -113,10 +113,11 @@ describe('Frog', function() {
     assert.isFunction(jon.detectCollision);
   });
 
-  it('should return the frog to the start if it gets hit by a vehicle', function() {
-
-  })
+  // it('should return the frog to the start if it gets hit by a vehicle', function() {
+  //
+  // })
 });
+
 ////////////
 function Canvas(height, width) {
   this.height = 500;

@@ -30,7 +30,7 @@ describe('Bus', function() {
   it('should have a speed of 2 by default', function() {
     var jon = new Bus();
     assert.equal(jon.speed, 2);
-  })
+  });
 
   it('should have a draw function', function(){
     var jon = new Bus();
