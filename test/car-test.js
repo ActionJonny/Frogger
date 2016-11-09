@@ -7,9 +7,9 @@ describe('Car', function() {
     assert.isObject(car);
   });
 
-  it('should have a x coordinate of 540 by default', function() {
+  it('should have a x coordinate of 400 by default', function() {
     var terminator = new Car();
-    assert.equal(terminator.x, 540);
+    assert.equal(terminator.x, 400);
   });
 
   it('should have a y coordinate of 365 by default', function() {
@@ -27,9 +27,9 @@ describe('Car', function() {
     assert.equal(jon.width, 75);
   });
 
-  it('should have a speed of 3 by default', function() {
+  it('should have a speed of 2 by default', function() {
     var jon = new Car();
-    assert.equal(jon.speed, 3);
+    assert.equal(jon.speed, 2);
   });
 
   it('should have a draw function', function(){
@@ -42,10 +42,10 @@ describe('Car', function() {
     assert.isFunction(jon.moveLeft);
   });
 
-  it('should decrement the x value by 3 if moveLeft is called', function() {
+  it('should decrement the x value by 2 if moveLeft is called', function() {
     var car = new Car();
     car.moveLeft();
-    assert.equal(car.x, 537);
+    assert.equal(car.x, 398);
   });
 
   it('should place the car at an x value of 600 if moveLeft is called while car.x is less than or equal to -80', function() {
@@ -59,10 +59,10 @@ describe('Car', function() {
     assert.isFunction(jon.moveRight);
   });
 
-  it('should increment the x value by 3 if moveRight is called', function() {
+  it('should increment the x value by 2 if moveRight is called', function() {
     var car = new Car();
     car.moveRight();
-    assert.equal(car.x, 543);
+    assert.equal(car.x, 402);
   });
 
   it('should place the car at an x value of 600 if moveRight is called while car.x is less than or equal to -80', function() {

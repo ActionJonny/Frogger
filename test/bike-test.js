@@ -28,15 +28,10 @@ describe('Bike', function() {
     assert.equal(jon.width, 50);
   });
 
-  it('should have a speed of 4 by default', function() {
+  it('should have a speed of 4.1 by default', function() {
     var jon = new Bike();
-    assert.equal(jon.speed, 4);
+    assert.equal(jon.speed, 4.1);
 
-  });
-
-  it('should have a speed of 4 by default', function() {
-    var jon = new Bike();
-    assert.equal(jon.speed, 4);
   });
 
   it('should have a draw function', function(){
@@ -49,10 +44,10 @@ describe('Bike', function() {
     assert.isFunction(jon.moveLeft);
   });
 
-  it('should decrement the x value by 2.8 if moveLeft is called', function() {
+  it('should decrement the x value by 2.3 if moveLeft is called', function() {
     var bike = new Bike();
     bike.moveLeft();
-    assert.equal(bike.x, 537.2);
+    assert.equal(bike.x, 537.7);
   });
 
   it('should place the bike at an x value of 650 if moveLeft is called while bike.x is less than or equal to -50', function() {
@@ -66,10 +61,10 @@ describe('Bike', function() {
     assert.isFunction(jon.moveLeftFast);
   });
 
-  it('should decrement the x value by 3.8 if moveLeftFast is called', function() {
+  it('should decrement the x value by 4.1 if moveLeftFast is called', function() {
     var bike = new Bike();
     bike.moveLeftFast();
-    assert.equal(bike.x, 536.2);
+    assert.equal(bike.x, 535.9);
   });
 
   it('should place the bike at an x value of 650 if moveLeftFast is called while bike.x is less than or equal to -50', function() {
@@ -83,10 +78,10 @@ describe('Bike', function() {
     assert.isFunction(jon.moveRight);
   });
 
-  it('should increment the x value by 4 if moveRight is called', function() {
+  it('should increment the x value by 2.9 if moveRight is called', function() {
     var bike = new Bike();
     bike.moveRight();
-    assert.equal(bike.x, 544);
+    assert.equal(bike.x, 542.9);
   });
 
   it('should place the bike at an x value of -40 if moveRight is called while bike.x is less than or equal to 600', function() {
