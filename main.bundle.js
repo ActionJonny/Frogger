@@ -332,6 +332,12 @@
 	  }
 	});
 
+	document.addEventListener('keydown', function (event) {
+	  if (event.which === 38 && frog.lives === 0) {
+	    return false;
+	  }
+	});
+
 	module.exports = Game;
 
 /***/ },
