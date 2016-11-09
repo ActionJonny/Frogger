@@ -50,6 +50,18 @@ div {
   position: absolute;
 }
 
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+img {
+  height: 48px;
+  width: 48px;
+  border-radius: 10px;
+  margin: 0 12px;
+}
+
 #world {
   background-color: #1A1A1A;
   outline: none;
@@ -105,21 +117,9 @@ div {
   color: #003366;
 }
 
-footer {
-  margin-top: 50px;
-  text-align: center;
-}
-
 #lives-section {
   display: flex;
   justify-content: center;
-}
-
-img {
-  height: 48px;
-  width: 48px;
-  border-radius: 10px;
-  margin: 0 12px;
 }
 
 .hide {
