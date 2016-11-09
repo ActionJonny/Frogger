@@ -12,7 +12,7 @@ describe('Car', function() {
     assert.equal(terminator.x, 400);
   });
 
-  it('should have a y coordinate of 365 by default', function() {
+  it('should have a y coordinate of 367 by default', function() {
     var jon = new Car();
     assert.equal(jon.y, 367);
   });
@@ -65,7 +65,24 @@ describe('Car', function() {
     assert.equal(car.x, 402);
   });
 
-  it('should place the car at an x value of 600 if moveRight is called while car.x is less than or equal to -80', function() {
+  it('should place the car at an x value of -75 if moveRight is called while car.x is less than 600', function() {
+    var car = new Car(600);
+    car.moveRight();
+    assert.equal(car.x, -75);
+  });
+
+  it('should have a moveRightFast function', function(){
+    var jon = new Car();
+    assert.isFunction(jon.moveRightFast);
+  });
+
+  it('should increment the x value by 3 if moveRightFast is called', function() {
+    var car = new Car();
+    car.moveRightFast();
+    assert.equal(car.x, 403);
+  });
+
+  it('should place the car at an x value of -75 if moveRightFast is called while car.x is less than 600', function() {
     var car = new Car(600);
     car.moveRight();
     assert.equal(car.x, -75);

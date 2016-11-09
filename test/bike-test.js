@@ -89,4 +89,9 @@ describe('Bike', function() {
     bike.moveRight();
     assert.equal(bike.x, -40);
   });
+
+  it('should have a moveRightFast function', function(){
+    var jon = new Bike();
+    assert.isFunction(jon.moveRightFast);
+  });
 });

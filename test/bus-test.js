@@ -65,8 +65,25 @@ describe('Bus', function() {
     assert.equal(bus.x, 541.5);
   });
 
-  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 700', function() {
+  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 600', function() {
     var bus = new Bus(700);
+    bus.moveRight();
+    assert.equal(bus.x, -120);
+  });
+
+  it('should have a moveRightFast function', function(){
+    var jon = new Bus();
+    assert.isFunction(jon.moveRightFast);
+  });
+
+  it('should increment the x value by 2.2 if moveRightFast is called', function() {
+    var bus = new Bus();
+    bus.moveRightFast();
+    assert.equal(bus.x, 542.2);
+  });
+
+  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 600', function() {
+    var bus = new Bus(600);
     bus.moveRight();
     assert.equal(bus.x, -120);
   });

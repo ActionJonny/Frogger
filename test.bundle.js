@@ -768,30 +768,10 @@
 	    assert.isFunction(jon.drowns);
 	  });
 
-	  // it('should return the frog to the start if it drowns', function(){
-	  //   var jon = new Frog(120, 30);
-	  //   var adam = new Frog(270, 30);
-	  //   var wilbur = new Frog(420, 30);
-	  //   jon.drowns(gameLost);
-	  //   adam.drowns(gameLost);
-	  //   wilbur.drowns(gameLost);
-	  //   assert.equal(jon.x, 310);
-	  //   assert.equal(jon.y, 470);
-	  //   assert.equal(adam.x, 310);
-	  //   assert.equal(adam.y, 470);
-	  //   assert.equal(wilbur.x, 310);
-	  //   assert.equal(wilbur.y, 470);
-	  //
-	  // });
-
 	  it('should have a detectCollision function', function () {
 	    var jon = new Frog();
 	    assert.isFunction(jon.detectCollision);
 	  });
-
-	  // it('should return the frog to the start if it gets hit by a vehicle', function() {
-	  //
-	  // })
 	});
 
 	////////////
@@ -9212,7 +9192,7 @@
 	    assert.equal(terminator.x, 400);
 	  });
 
-	  it('should have a y coordinate of 365 by default', function () {
+	  it('should have a y coordinate of 367 by default', function () {
 	    var jon = new Car();
 	    assert.equal(jon.y, 367);
 	  });
@@ -9265,7 +9245,24 @@
 	    assert.equal(car.x, 402);
 	  });
 
-	  it('should place the car at an x value of 600 if moveRight is called while car.x is less than or equal to -80', function () {
+	  it('should place the car at an x value of -75 if moveRight is called while car.x is less than 600', function () {
+	    var car = new Car(600);
+	    car.moveRight();
+	    assert.equal(car.x, -75);
+	  });
+
+	  it('should have a moveRightFast function', function () {
+	    var jon = new Car();
+	    assert.isFunction(jon.moveRightFast);
+	  });
+
+	  it('should increment the x value by 3 if moveRightFast is called', function () {
+	    var car = new Car();
+	    car.moveRightFast();
+	    assert.equal(car.x, 403);
+	  });
+
+	  it('should place the car at an x value of -75 if moveRightFast is called while car.x is less than 600', function () {
 	    var car = new Car(600);
 	    car.moveRight();
 	    assert.equal(car.x, -75);
@@ -9343,8 +9340,25 @@
 	    assert.equal(bus.x, 541.5);
 	  });
 
-	  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 700', function () {
+	  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 600', function () {
 	    var bus = new Bus(700);
+	    bus.moveRight();
+	    assert.equal(bus.x, -120);
+	  });
+
+	  it('should have a moveRightFast function', function () {
+	    var jon = new Bus();
+	    assert.isFunction(jon.moveRightFast);
+	  });
+
+	  it('should increment the x value by 2.2 if moveRightFast is called', function () {
+	    var bus = new Bus();
+	    bus.moveRightFast();
+	    assert.equal(bus.x, 542.2);
+	  });
+
+	  it('should place the bus at an x value of -120 if moveRight is called while bus.x is less than or equal to 600', function () {
+	    var bus = new Bus(600);
 	    bus.moveRight();
 	    assert.equal(bus.x, -120);
 	  });
@@ -9442,6 +9456,11 @@
 	    var bike = new Bike(600);
 	    bike.moveRight();
 	    assert.equal(bike.x, -40);
+	  });
+
+	  it('should have a moveRightFast function', function () {
+	    var jon = new Bike();
+	    assert.isFunction(jon.moveRightFast);
 	  });
 	});
 
