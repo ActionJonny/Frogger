@@ -89,7 +89,7 @@
 	  },
 
 	  moveDown: function (canvas) {
-	    if (this.y < canvas.height - 60) {
+	    if (this.y < canvas.height - 60 && this.x > 290 && this.x < 320 || this.y < canvas.height - 90) {
 	      this.y += this.speedY;
 	    }
 	  },
@@ -113,14 +113,11 @@
 	      this.level++;
 	      if (this.level < 3) {
 	        levelCompleteScreen.style.display = 'block';
-	        console.log(this.level);
 	        return this.x = 310, this.y = 470;
 	      } else if (this.level === 3) {
 	        levelCompleteScreen.style.display = 'block';
-	        console.log(this.level);
 	        return this.x = 310, this.y = 470;
 	      } else if (this.level > 3) {
-	        console.log(this.level);
 	        gameWonScreen.style.display = 'block';
 	        return this.x = 310, this.y = 470;
 	      }
@@ -129,7 +126,6 @@
 	  drowns: function (gameLostScreen) {
 	    if (this.y < 50 && this.x > 90 && this.x < 210 || this.y < 50 && this.x > 230 && this.x < 370 || this.y < 50 && this.x > 390 && this.x < 550) {
 	      this.lives--;
-	      console.log(this.lives);
 	      if (this.lives > 0) {
 	        return this.x = 310, this.y = 470;
 	      } else gameLostScreen.style.display = 'block';
@@ -147,19 +143,18 @@
 	    }
 	  },
 	  detectCollision: function (vehicle, gameLostScreen) {
+	    //FROG
 	    var frogLeftEdge = { x: this.x - this.r, y: this.y };
 	    var frogRightEdge = { x: this.x + this.r, y: this.y };
 	    var frogTopEdge = { x: this.x, y: this.y - this.r };
 	    var frogBottomEdge = { x: this.x, y: this.y + this.r };
-
+	    //VEHICLE
 	    var vehicleTopLeftCorner = { x: vehicle.x, y: vehicle.y };
 	    var vehicleTopRightCorner = { x: vehicle.x + vehicle.width, y: vehicle.y };
 	    var vehicleBottomRightCorner = { x: vehicle.x + vehicle.width, y: vehicle.y + vehicle.height };
 	    var vehicleBottomLeftCorner = { x: vehicle.x, y: vehicle.y + vehicle.height };
-
 	    if (frogLeftEdge.x <= vehicleBottomRightCorner.x && frogRightEdge.x >= vehicleBottomLeftCorner.x && frogBottomEdge.y >= vehicleTopRightCorner.y && frogTopEdge.y <= vehicleTopLeftCorner.y) {
 	      this.lives--;
-	      console.log(this.lives);
 	      if (this.lives > 0) {
 	        return this.x = 310, this.y = 470;
 	      } else gameLostScreen.style.display = 'block';
