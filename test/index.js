@@ -4,3 +4,4 @@ require('./zone-test.js');
 require('./car-test.js');
 require('./bus-test.js');
 require('./bike-test.js');
+require('./troncycle-test.js');

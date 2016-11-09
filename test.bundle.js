@@ -47,7 +47,7 @@
 	__webpack_require__(9);
 	mocha.setup("bdd");
 	__webpack_require__(17)
-	__webpack_require__(64);
+	__webpack_require__(65);
 	if(false) {
 		module.hot.accept();
 		module.hot.dispose(function() {
@@ -342,7 +342,39 @@
 	module.exports = Pad;
 
 /***/ },
-/* 8 */,
+/* 8 */
+/***/ function(module, exports) {
+
+	
+	function Troncycle(x, y, width, height, speed) {
+	  this.x = x || 580;
+	  this.y = y || 370;
+	  this.width = width || 60;
+	  this.height = height || 20;
+	  this.speed = speed || 4;
+	}
+
+	Troncycle.prototype = {
+	  draw: function (ctx) {
+	    ctx.fillStyle = '#A55999';
+	    ctx.fillRect(this.x, this.y, this.width, this.height);
+	    return this;
+	  },
+	  moveRight: function () {
+	    if (this.x < 600) {
+	      this.x += this.speed;
+	    } else this.x = -60;
+	  },
+	  moveLeft: function () {
+	    if (this.x > -60) {
+	      this.x -= this.speed;
+	    } else this.x = 660;
+	  }
+	};
+
+	module.exports = Troncycle;
+
+/***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -636,6 +668,7 @@
 	__webpack_require__(61);
 	__webpack_require__(62);
 	__webpack_require__(63);
+	__webpack_require__(64);
 
 /***/ },
 /* 18 */
@@ -9416,6 +9449,79 @@
 /* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var assert = __webpack_require__(19).assert;
+	var Troncycle = __webpack_require__(8);
+
+	describe('Troncycle', function () {
+	  it('should be an object', function () {
+	    var bike = new Troncycle();
+	    assert.isObject(bike);
+	  });
+
+	  it('should have a x coordinate of 580 by default', function () {
+	    var terminator = new Troncycle();
+	    assert.equal(terminator.x, 580);
+	  });
+
+	  it('should have a y coordinate of 370 by default', function () {
+	    var jon = new Troncycle();
+	    assert.equal(jon.y, 370);
+	  });
+
+	  it('should have a height of 20 by default', function () {
+	    var terminator = new Troncycle();
+	    assert.equal(terminator.height, 20);
+	  });
+
+	  it('should have a width of 60 by default', function () {
+	    var jon = new Troncycle();
+	    assert.equal(jon.width, 60);
+	  });
+
+	  it('should have a draw function', function () {
+	    var jon = new Troncycle();
+	    assert.isFunction(jon.draw);
+	  });
+
+	  it('should have a moveLeft function', function () {
+	    var jon = new Troncycle();
+	    assert.isFunction(jon.moveLeft);
+	  });
+
+	  it('should decrement the x value by 4 if moveLeft is called', function () {
+	    var bike = new Troncycle();
+	    bike.moveLeft();
+	    assert.equal(bike.x, 576);
+	  });
+
+	  it('should place the bike at an x value of 660 if moveLeft is called while bike.x is less than or equal to -60', function () {
+	    var bike = new Troncycle(-60);
+	    bike.moveLeft();
+	    assert.equal(bike.x, 660);
+	  });
+
+	  it('should have a moveRight function', function () {
+	    var jon = new Troncycle();
+	    assert.isFunction(jon.moveRight);
+	  });
+
+	  it('should increment the x value by 4 if moveRight is called', function () {
+	    var bike = new Troncycle();
+	    bike.moveRight();
+	    assert.equal(bike.x, 584);
+	  });
+
+	  it('should place the bike at an x value of -60 if moveRight is called while bike.x is less than or equal to 600', function () {
+	    var bike = new Troncycle(600);
+	    bike.moveRight();
+	    assert.equal(bike.x, -60);
+	  });
+	});
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process) {process.nextTick(function() {
 		delete __webpack_require__.c[module.id];
 		if(typeof window !== "undefined" && window.mochaPhantomJS)
@@ -9424,10 +9530,10 @@
 			mocha.run();
 	});
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(65)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(66)))
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
