@@ -241,9 +241,9 @@
 	    frog.winner(levelCompleteScreen, gameWonScreen);
 	    frog.drowns(gameLostScreen);
 	    frog.livesDisplay(frogFirstLife, frogSecondLife, frogFinalLife, zeroImg);
-	    // vehicleArray.forEach(function(vehicle) {
-	    //   frog.detectCollision(vehicle, gameLostScreen);
-	    // });
+	    vehicleArray.forEach(function (vehicle) {
+	      frog.detectCollision(vehicle, gameLostScreen);
+	    });
 	  };
 	  this.levelTwo = function () {
 	    water.forEach(function (area) {
@@ -266,9 +266,9 @@
 	    frog.winner(levelCompleteScreen, gameWonScreen);
 	    frog.drowns(gameLostScreen);
 	    frog.livesDisplay(frogFirstLife, frogSecondLife, frogFinalLife, zeroImg);
-	    // vehicleArray.forEach(function(vehicle) {
-	    //   frog.detectCollision(vehicle, gameLostScreen);
-	    // });
+	    vehicleArray.forEach(function (vehicle) {
+	      frog.detectCollision(vehicle, gameLostScreen);
+	    });
 	  };
 	  this.levelThree = function () {
 	    water.forEach(function (area) {
