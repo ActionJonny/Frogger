@@ -169,28 +169,34 @@
 
 	  var troncycleOne = new Troncycle();
 	  var troncycleEight = new Troncycle(200, 370);
-	  var troncycleFifteen = new Troncycle(100, 370);
+	  var troncycleFifteen = new Troncycle(50, 370);
 	  var troncycleTwo = new Troncycle(400, 330);
 	  var troncycleNine = new Troncycle(200, 330);
 	  var troncycleSixteen = new Troncycle(580, 330);
 	  var troncycleThree = new Troncycle(300, 280);
 	  var troncycleTen = new Troncycle(150, 280);
-	  var troncycleSeventeen = new Troncycle(400, 280);
+	  var troncycleSeventeen = new Troncycle(420, 280);
 	  var troncycleFour = new Troncycle(200, 195);
 	  var troncycleEleven = new Troncycle(40, 195);
 	  var troncycleEightteen = new Troncycle(290, 195);
-	  var troncycleFive = new Troncycle(400, 150);
+	  var troncycleFive = new Troncycle(390, 150);
 	  var troncycleTwelve = new Troncycle(500, 150);
 	  var troncycleNineteen = new Troncycle(100, 150);
 	  var troncycleSix = new Troncycle(300, 110);
 	  var troncycleThirteen = new Troncycle(20, 110);
 	  var troncycleTwenty = new Troncycle(420, 110);
-	  var troncycleSeven = new Troncycle(100, 70);
+	  var troncycleSeven = new Troncycle(90, 70);
 	  var troncycleFourteen = new Troncycle(500, 70);
 	  var troncycleTwentyOne = new Troncycle(200, 70);
 
 	  var cycles = [];
 	  cycles.push(troncycleOne, troncycleTwo, troncycleThree, troncycleFour, troncycleFive, troncycleSix, troncycleSeven, troncycleEight, troncycleNine, troncycleTen, troncycleEleven, troncycleTwelve, troncycleThirteen, troncycleFourteen, troncycleFifteen, troncycleSixteen, troncycleSeventeen, troncycleEightteen, troncycleNineteen, troncycleTwenty, troncycleTwentyOne);
+
+	  var cyclesMoveRight = [];
+	  cyclesMoveRight.push(troncycleOne, troncycleThree, troncycleFive, troncycleSeven, troncycleEight, troncycleTen, troncycleTwelve, troncycleFourteen, troncycleFifteen, troncycleSeventeen, troncycleNineteen, troncycleTwentyOne);
+
+	  var cyclesMoveLeft = [];
+	  cyclesMoveLeft.push(troncycleTwo, troncycleFour, troncycleSix, troncycleNine, troncycleEleven, troncycleThirteen, troncycleSixteen, troncycleEightteen, troncycleTwenty);
 
 	  var water = [];
 	  water.push(startZone, endZone);
@@ -272,35 +278,12 @@
 	    pads.forEach(function (pad) {
 	      pad.draw(ctx);
 	    });
-	    //newStuffForEachDrawAndMove
-	    troncycleOne.draw(ctx).moveRight();
-	    troncycleEight.draw(ctx).moveRight();
-	    troncycleFifteen.draw(ctx).moveRight();
-
-	    troncycleTwo.draw(ctx).moveLeft();
-	    troncycleNine.draw(ctx).moveLeft();
-	    troncycleSixteen.draw(ctx).moveLeft();
-
-	    troncycleThree.draw(ctx).moveRight();
-	    troncycleTen.draw(ctx).moveRight();
-	    troncycleSeventeen.draw(ctx).moveRight();
-
-	    troncycleFour.draw(ctx).moveLeft();
-	    troncycleEleven.draw(ctx).moveLeft();
-	    troncycleEightteen.draw(ctx).moveLeft();
-
-	    troncycleFive.draw(ctx).moveRight();
-	    troncycleTwelve.draw(ctx).moveRight();
-	    troncycleNineteen.draw(ctx).moveRight();
-
-	    troncycleSix.draw(ctx).moveLeft();
-	    troncycleThirteen.draw(ctx).moveLeft();
-	    troncycleTwenty.draw(ctx).moveLeft();
-
-	    troncycleSeven.draw(ctx).moveRight();
-	    troncycleFourteen.draw(ctx).moveRight();
-	    troncycleTwentyOne.draw(ctx).moveRight();
-
+	    cyclesMoveRight.forEach(function (obstacle) {
+	      obstacle.draw(ctx).moveRight();
+	    });
+	    cyclesMoveLeft.forEach(function (obstacle) {
+	      obstacle.draw(ctx).moveLeft();
+	    });
 	    frog.draw(ctx);
 	    frog.winner(levelCompleteScreen, gameWonScreen);
 	    frog.drowns(gameLostScreen);
@@ -335,7 +318,6 @@
 	    frogFirstLife.classList.remove('hide');
 	    frogSecondLife.classList.remove('hide');
 	    frogFinalLife.classList.remove('hide');
-	    // console.log(frog.lives);
 	  }
 	});
 
@@ -381,7 +363,7 @@
 	  },
 
 	  moveDown: function (canvas) {
-	    if (this.y < canvas.height - 60) {
+	    if (this.y < canvas.height - 60 && this.x > 290 && this.x < 320 || this.y < canvas.height - 90) {
 	      this.y += this.speedY;
 	    }
 	  },
@@ -405,14 +387,11 @@
 	      this.level++;
 	      if (this.level < 3) {
 	        levelCompleteScreen.style.display = 'block';
-	        console.log(this.level);
 	        return this.x = 310, this.y = 470;
 	      } else if (this.level === 3) {
 	        levelCompleteScreen.style.display = 'block';
-	        console.log(this.level);
 	        return this.x = 310, this.y = 470;
 	      } else if (this.level > 3) {
-	        console.log(this.level);
 	        gameWonScreen.style.display = 'block';
 	        return this.x = 310, this.y = 470;
 	      }
@@ -421,7 +400,6 @@
 	  drowns: function (gameLostScreen) {
 	    if (this.y < 50 && this.x > 90 && this.x < 210 || this.y < 50 && this.x > 230 && this.x < 370 || this.y < 50 && this.x > 390 && this.x < 550) {
 	      this.lives--;
-	      console.log(this.lives);
 	      if (this.lives > 0) {
 	        return this.x = 310, this.y = 470;
 	      } else gameLostScreen.style.display = 'block';
@@ -439,19 +417,18 @@
 	    }
 	  },
 	  detectCollision: function (vehicle, gameLostScreen) {
+	    //FROG
 	    var frogLeftEdge = { x: this.x - this.r, y: this.y };
 	    var frogRightEdge = { x: this.x + this.r, y: this.y };
 	    var frogTopEdge = { x: this.x, y: this.y - this.r };
 	    var frogBottomEdge = { x: this.x, y: this.y + this.r };
-
+	    //VEHICLE
 	    var vehicleTopLeftCorner = { x: vehicle.x, y: vehicle.y };
 	    var vehicleTopRightCorner = { x: vehicle.x + vehicle.width, y: vehicle.y };
 	    var vehicleBottomRightCorner = { x: vehicle.x + vehicle.width, y: vehicle.y + vehicle.height };
 	    var vehicleBottomLeftCorner = { x: vehicle.x, y: vehicle.y + vehicle.height };
-
 	    if (frogLeftEdge.x <= vehicleBottomRightCorner.x && frogRightEdge.x >= vehicleBottomLeftCorner.x && frogBottomEdge.y >= vehicleTopRightCorner.y && frogTopEdge.y <= vehicleTopLeftCorner.y) {
 	      this.lives--;
-	      console.log(this.lives);
 	      if (this.lives > 0) {
 	        return this.x = 310, this.y = 470;
 	      } else gameLostScreen.style.display = 'block';
