@@ -15,12 +15,6 @@ h1 {
   margin: 20px auto;
 }
 
-p {
-  color: #CC9900;
-  line-height: 22px;
-  margin-top: 15px;
-}
-
 h2 {
   animation: blinker 1.8s linear infinite;
   font-size: 2rem;
@@ -37,7 +31,13 @@ h6 {
   margin-bottom: 15px;
 }
 
-div {
+p {
+  color: #CC9900;
+  line-height: 22px;
+  margin-top: 15px;
+}
+
+article {
   animation-direction: alternate;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -56,10 +56,10 @@ footer {
 }
 
 img {
-  height: 48px;
-  width: 48px;
   border-radius: 10px;
   margin: 0 12px;
+  height: 48px;
+  width: 48px;
 }
 
 #world {
@@ -68,8 +68,8 @@ img {
 }
 
 #canvas-wrap, #start-game {
-  height: 500px;
   margin: 25px auto 0px auto;
+  height: 500px;
   width: 600px;
 }
 
