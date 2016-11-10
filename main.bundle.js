@@ -160,36 +160,43 @@
 	    vehicleArray.push(bikes[o]);
 	  }
 
-	  var troncycleOne = new Troncycle();
-	  var troncycleEight = new Troncycle(200, 370);
-	  var troncycleFifteen = new Troncycle(50, 370);
-	  var troncycleTwo = new Troncycle(400, 330);
-	  var troncycleNine = new Troncycle(200, 330);
-	  var troncycleSixteen = new Troncycle(580, 330);
-	  var troncycleThree = new Troncycle(300, 280);
-	  var troncycleTen = new Troncycle(150, 280);
-	  var troncycleSeventeen = new Troncycle(420, 280);
-	  var troncycleFour = new Troncycle(200, 195);
-	  var troncycleEleven = new Troncycle(40, 195);
-	  var troncycleEightteen = new Troncycle(290, 195);
-	  var troncycleFive = new Troncycle(390, 150);
-	  var troncycleTwelve = new Troncycle(500, 150);
-	  var troncycleNineteen = new Troncycle(100, 150);
-	  var troncycleSix = new Troncycle(300, 110);
-	  var troncycleThirteen = new Troncycle(20, 110);
-	  var troncycleTwenty = new Troncycle(420, 110);
-	  var troncycleSeven = new Troncycle(90, 70);
-	  var troncycleFourteen = new Troncycle(500, 70);
-	  var troncycleTwentyOne = new Troncycle(200, 70);
+	  var troncycles = [];
+	  var firstTronX = 70;
+	  var secondTronX = 20;
+	  var thirdTronX = 330;
+	  var fourthTronX = 350;
+	  var fifthTronX = 200;
+	  var sixthTronX = 200;
+	  var seventhTronX = 190;
+	  for (var p = 0; p < 26; p++) {
+	    if (p < 4) {
+	      troncycles.push(new Troncycle(firstTronX, 370));
+	      firstTronX -= 180;
+	    } else if (p < 8) {
+	      troncycles.push(new Troncycle(secondTronX, 330));
+	      secondTronX += 240;
+	    } else if (p < 11) {
+	      troncycles.push(new Troncycle(thirdTronX, 280));
+	      thirdTronX -= 150;
+	    } else if (p < 15) {
+	      troncycles.push(new Troncycle(fourthTronX, 195));
+	      fourthTronX += 160;
+	    } else if (p < 18) {
+	      troncycles.push(new Troncycle(fifthTronX, 150));
+	      fifthTronX -= 290;
+	    } else if (p < 21) {
+	      troncycles.push(new Troncycle(sixthTronX, 110));
+	      sixthTronX += 280;
+	    } else {
+	      troncycles.push(new Troncycle(seventhTronX, 70));
+	      seventhTronX -= 170;
+	    }
+	  }
 
-	  var cycles = [];
-	  cycles.push(troncycleOne, troncycleTwo, troncycleThree, troncycleFour, troncycleFive, troncycleSix, troncycleSeven, troncycleEight, troncycleNine, troncycleTen, troncycleEleven, troncycleTwelve, troncycleThirteen, troncycleFourteen, troncycleFifteen, troncycleSixteen, troncycleSeventeen, troncycleEightteen, troncycleNineteen, troncycleTwenty, troncycleTwentyOne);
-
-	  var cyclesMoveRight = [];
-	  cyclesMoveRight.push(troncycleOne, troncycleThree, troncycleFive, troncycleSeven, troncycleEight, troncycleTen, troncycleTwelve, troncycleFourteen, troncycleFifteen, troncycleSeventeen, troncycleNineteen, troncycleTwentyOne);
-
-	  var cyclesMoveLeft = [];
-	  cyclesMoveLeft.push(troncycleTwo, troncycleFour, troncycleSix, troncycleNine, troncycleEleven, troncycleThirteen, troncycleSixteen, troncycleEightteen, troncycleTwenty);
+	  var cycleArray = [];
+	  for (var q = 0; q < troncycles.length; q++) {
+	    cycleArray.push(troncycles[q]);
+	  }
 
 	  var water = [];
 	  water.push(startZone, endZone);
@@ -202,6 +209,12 @@
 
 	  var topLaneDifferent = [];
 	  topLaneDifferent.push(bikes[5], bikes[6]);
+
+	  var cyclesMoveRight = [];
+	  cyclesMoveRight.push(troncycles[0], troncycles[1], troncycles[2], troncycles[3], troncycles[8], troncycles[9], troncycles[10], troncycles[15], troncycles[16], troncycles[17], troncycles[21], troncycles[22], troncycles[23], troncycles[24]);
+
+	  var cyclesMoveLeft = [];
+	  cyclesMoveLeft.push(troncycles[4], troncycles[5], troncycles[6], troncycles[7], troncycles[11], troncycles[12], troncycles[13], troncycles[14], troncycles[18], troncycles[19], troncycles[20]);
 
 	  //GAME FUNCTIONS
 	  this.animate = function () {
@@ -281,7 +294,7 @@
 	    frog.winner(levelCompleteScreen, gameWonScreen);
 	    frog.drowns(gameLostScreen);
 	    frog.livesDisplay(frogFirstLife, frogSecondLife, frogFinalLife, zeroImg);
-	    cycles.forEach(function (cycle) {
+	    troncycles.forEach(function (cycle) {
 	      frog.detectCollision(cycle, gameLostScreen);
 	    });
 	  };
@@ -339,12 +352,6 @@
 	    frog.canMove = true;
 	  }
 	});
-
-	function checkForFrogLives() {
-	  if (frog.lives === 0) {
-	    frog.canMove = false;
-	  }
-	}
 
 	module.exports = Game;
 
