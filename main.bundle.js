@@ -45,10 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Game = __webpack_require__(1);
-
 	var start = document.getElementById('start-game');
-	var gameLost = document.getElementById('game-lost');
-	var gameWon = document.getElementById('game-complete');
 
 	var canvas = document.getElementById('world');
 	var ctx = canvas.getContext('2d');
@@ -217,6 +214,10 @@
 	  cyclesMoveLeft.push(troncycles[4], troncycles[5], troncycles[6], troncycles[7], troncycles[11], troncycles[12], troncycles[13], troncycles[14], troncycles[18], troncycles[19], troncycles[20]);
 
 	  //GAME FUNCTIONS
+	  this.themeSong = audio;
+	  this.playThemeSong = function () {
+	    this.themeSong.play();
+	  };
 	  this.animate = function () {
 	    if (frog.level === 1) {
 	      this.levelOne();
