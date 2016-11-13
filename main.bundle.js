@@ -214,10 +214,6 @@
 	  cyclesMoveLeft.push(troncycles[4], troncycles[5], troncycles[6], troncycles[7], troncycles[11], troncycles[12], troncycles[13], troncycles[14], troncycles[18], troncycles[19], troncycles[20]);
 
 	  //GAME FUNCTIONS
-	  this.themeSong = audio;
-	  this.playThemeSong = function () {
-	    this.themeSong.play();
-	  };
 	  this.animate = function () {
 	    if (frog.level === 1) {
 	      this.levelOne();
