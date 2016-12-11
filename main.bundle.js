@@ -76,6 +76,24 @@
 	firebase.initializeApp(config);
 	var database = firebase.database();
 
+	var ref = database.ref('names');
+	ref.on('value', gotData, errData);
+
+	function gotData(data) {
+	  var names = data.val();
+	  var keys = Object.keys(names);
+	  for (var i = 0; i < keys.length; i++) {
+	    var k = keys[i];
+	    var name = names[k].name;
+	    console.log(name);
+	  }
+	}
+
+	function errData(data) {
+	  console.log('Error!!!');
+	  console.log(err);
+	}
+
 	submitBtn.addEventListener('click', function () {
 	  submitName();
 	  this.style.display = 'none';
