@@ -28,7 +28,11 @@
   </section>
   <section id="game-complete" style="display: none;">
     <article class='bouncing-frog'><img src="http://www.rw-designer.com/icon-view/288.png"/></article>
-    <h2>You Won!</h2>
+    <h2 id="you-won-header">You Won!</h2>
+    <h4>Jon & Adam want to know<br>you beat their game.<br>Please input your name<br>below and click Submit.</h4>
+    <input id="name-input" type="text" name="winner name input" placeholder="Your Name">
+    <input id="winner-btn" type="button" name="submit button" value="Submit">
+    <p id="thank-you"></p>
     <h3>Press enter to<br>start a new game.</h3>
   </section>
   <section id="canvas-wrap">
@@ -46,6 +50,7 @@
       <img class="hide" id="zero-img" src="sadFrog.svg"/>
     </section>
   </footer>
+  <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
   <script src="main.bundle.js"></script>
   <audio autoplay><source src="./lib/InMotion.m4a"/></audio>
 </body>
